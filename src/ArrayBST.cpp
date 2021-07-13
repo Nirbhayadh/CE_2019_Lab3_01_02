@@ -20,6 +20,10 @@ bool ArrayBST::isEmpty(){
 }
 bool ArrayBST::add(int key, int value){
     ArrayNode *newNode=new ArrayNode(key,value);
+    if(exists(key)){
+        cout<<key<<" already exists in the tree!"<<endl;
+    }
+    else{
     for(int i=1;i<MAX_NUM_NODES;){
         if(nodes[i]==NULL){
             nodes[i]=newNode;
@@ -32,6 +36,9 @@ bool ArrayBST::add(int key, int value){
 
             i=2*i;
         }
+    }
+        cout<<"Added:-  Key: "<<key<<" with Value: "<<value<<endl;
+
     }
 }
 void ArrayBST::max(int &output){

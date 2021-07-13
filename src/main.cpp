@@ -14,6 +14,7 @@ a.add(35,3);
 a.add(25,6);
 a.add(15,5);
 a.add(5,4);
+a.add(15,41);
 
 a.inorder();
 int max,min;
