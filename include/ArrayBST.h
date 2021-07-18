@@ -27,11 +27,13 @@ class ArrayBST: public AbstractBST{
     void max(int &output);
     void min(int &output);
     bool exists(int targetkey);
+    bool remove(int targetkey);
 
     void inorder();
 
     private:
     ArrayNode *nodes[MAX_NUM_NODES];
     void inorder(int index);
+    void arrangeTree(int temp_root);
 
 };

@@ -105,3 +105,71 @@ void ArrayBST::inorder(int index){
     }
 }
 
+bool ArrayBST::remove(int targetkey){
+if(exists(targetkey)){
+int temp=1;
+while(nodes[temp]!=NULL && nodes[temp]->key!=targetkey){
+
+    if(nodes[temp]->key>targetkey){
+        temp=temp*2;
+    }
+    else{
+        temp=temp*2+1;
+    }
+}
+// CASE1: LEAF NODE
+if(nodes[temp*2]==NULL && nodes[temp*2+1]==NULL){
+    nodes[temp]=NULL;
+
+}
+
+// CASE2: ELEMENT WITH SINGLE CHILD
+else if(nodes[temp*2]==NULL || nodes[temp*2+1]==NULL){
+
+    if(nodes[temp*2]!=NULL){
+        arrangeTree(temp*2);
+    }
+    else{
+        arrangeTree(temp*2+1);
+    }
+
+}
+// CASE3: ELEMENT WITH BOTH CHILDREN
+else{
+int temp_right=temp*2+1;
+while(nodes[temp_right*2]!=NULL){
+    temp_right=temp_right*2;
+}
+    nodes[temp]=nodes[temp_right];
+
+if(nodes[temp_right*2+1]==NULL){
+    nodes[temp_right]=NULL;
+}
+else{
+    arrangeTree(temp_right*2+1);
+}
+
+
+
+
+}
+cout<<"Removed: "<<targetkey<<endl;
+return true;
+}
+else {
+    cout<<targetkey<<" doesn't exist to be removed"<<endl;
+    return false;
+}
+}
+// Function that arranges the tree, incase it gets broken after removing its element
+    void ArrayBST::arrangeTree(int temp_root){
+        int x=(temp_root/2);
+        nodes[x]=nodes[temp_root];
+        nodes[temp_root]=NULL;
+        if(nodes[temp_root*2]!=NULL){
+            arrangeTree(temp_root*2);
+        }
+        if(nodes[temp_root*2+1]!=NULL){
+            arrangeTree(temp_root*2+1);
+        }
+    }
