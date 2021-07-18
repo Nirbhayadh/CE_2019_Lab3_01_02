@@ -32,7 +32,7 @@ class LinkedBST:public AbstractBST
 
     virtual bool isEmpty();
     virtual bool add(int key, int value);
-    // virtual void max(int &output);
+    virtual void max(int &output);
     // virtual void min(int &output);
     virtual bool exists(int targetkey);
 

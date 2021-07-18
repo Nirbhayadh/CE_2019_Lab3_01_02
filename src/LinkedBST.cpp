@@ -59,6 +59,23 @@ void LinkedBST::insert(LinkedNode *subtree_Root, LinkedNode *newNode)
     }
 }
 
+void LinkedBST::max(int &output)
+{
+    if(!isEmpty())
+    {
+        LinkedNode *temp = this->root;
+        while(temp->right != nullptr)
+        {
+            temp = temp->right;
+        }
+        output = temp->key;
+    }
+    else
+    {
+        cout << "The tree is empty" << endl;
+    }
+}
+
 bool LinkedBST::exists(int targetkey)
 {
     if(this->isEmpty())
