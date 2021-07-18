@@ -14,5 +14,7 @@ int main()
     obj.max(max_key);
     cout << "The maximum key in the tree is " << max_key << endl;
 
-
+    int min_key;
+    obj.min(min_key);
+    cout << "The minimum key in the tree is " << min_key << endl;
 }

@@ -13,7 +13,7 @@ class LinkedNode
     LinkedNode(int key, int value, LinkedNode *left, LinkedNode *right)
     {
         this->key = key;
-        this->data = data;
+        this->data = value;
         this->left = left;
         this->right = right;
     }
@@ -33,7 +33,7 @@ class LinkedBST:public AbstractBST
     virtual bool isEmpty();
     virtual bool add(int key, int value);
     virtual void max(int &output);
-    // virtual void min(int &output);
+    virtual void min(int &output);
     virtual bool exists(int targetkey);
 
     // virtual void inorder() = 0;
