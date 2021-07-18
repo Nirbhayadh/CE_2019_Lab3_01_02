@@ -24,7 +24,7 @@ class LinkedBST:public AbstractBST
 {
     private:
     LinkedNode *root;
-    void insert(LinkedNode *subtree_Root, LinkedNode *newNode);
+    void add(LinkedNode *subtree_Root, LinkedNode *newNode);
 
     public:
     LinkedBST(); // constructor

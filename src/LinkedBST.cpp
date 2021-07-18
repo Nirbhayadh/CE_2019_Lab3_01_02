@@ -25,18 +25,18 @@ bool LinkedBST::add(int key,int value)
     }
     else
     {
-        insert(this->root,newNode);
+        add(this->root,newNode);
         return true;
     }
 }
 
-void LinkedBST::insert(LinkedNode *subtree_Root, LinkedNode *newNode)
+void LinkedBST::add(LinkedNode *subtree_Root, LinkedNode *newNode)
 {
     if(newNode->key > subtree_Root->key)
     {
         if(subtree_Root->right != nullptr)
         {
-            insert(subtree_Root->right,newNode);
+            add(subtree_Root->right,newNode);
         }
         else
         {
@@ -49,7 +49,7 @@ void LinkedBST::insert(LinkedNode *subtree_Root, LinkedNode *newNode)
         {
             if(subtree_Root->left != nullptr)
             {
-                insert(subtree_Root->left, newNode);
+                add(subtree_Root->left, newNode);
             }
             else
             {
