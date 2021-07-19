@@ -9,7 +9,7 @@ int main(){
 
 
 
-cout<<"ArrayBST:-"<<endl;
+cout<<"ArrayBST implementation:-"<<endl<<endl;
 ArrayBST arrayBST;
 arrayBST.remove(20);
 arrayBST.add(20,1);
@@ -41,7 +41,7 @@ arrayBST.inorder();
 
 
 
-
+cout<<endl<<endl<<endl<<"LinkedBST implementation:-"<<endl<<endl;
 
 
     AbstractBST *obj = new LinkedBST();
